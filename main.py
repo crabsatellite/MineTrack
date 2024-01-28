@@ -31,7 +31,7 @@ for file_name in os.listdir(input_folder):
             mono_audio = mono_audio[:10 * 60 * 1000]
 
             # Create a fade out effect for the last 30 seconds
-            fade_duration = 5 * 1000  # 30 seconds
+            fade_duration = 5 * 1000  # 5 seconds
             mono_audio = mono_audio.fade_out(fade_duration)
 
         # Export the file
