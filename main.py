@@ -16,7 +16,7 @@ if not os.path.exists(output_folder):
 
 # Iterate through all the files in the input folder
 for file_name in os.listdir(input_folder):
-    if file_name.endswith(('.mp3', '.wav', '.flac', '.ogg')):
+    if file_name.endswith(('.mp3', '.wav', '.flac', '.ogg', '.m4a')):
         file_path = os.path.join(input_folder, file_name)
         output_file_name = os.path.splitext(file_name)[0] + '.ogg'
         output_file_path = os.path.join(output_folder, output_file_name)
