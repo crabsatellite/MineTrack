@@ -37,6 +37,13 @@ for file_name in os.listdir(input_folder):
             fade_duration = 5 * 1000  # 5 seconds, adjusted to your needs
             decreased_volume_audio = decreased_volume_audio.fade_out(fade_duration)
 
+        # Calculate length in ticks
+        audio_length_seconds = len(decreased_volume_audio) / 1000  # Convert milliseconds to seconds
+        length_in_ticks = int(audio_length_seconds * 20)  # Convert to game ticks
+
+        # Print or save the result
+        print(f'File: {file_name}, Length in ticks: {length_in_ticks}')
+
         # Export the file
         decreased_volume_audio.export(output_file_path, format='ogg')
 
