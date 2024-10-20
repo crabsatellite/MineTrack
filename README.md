@@ -45,7 +45,7 @@ project/
 
 ### Step 1: Prepare your audio files
 
-Place all audio files you wish to convert into the `input` folder. The tool is tested to supports the following file formats: `.mp3`, `.wav`, `.flac`, `.ogg`, `.m4a`, `.mp4`, `.wmv`, and `.xwm`. Other formats may also work. 
+Place all audio files you wish to convert into the input folder. The tool has been tested and supports the following file formats: .mp3, .wav, .flac, .ogg, .m4a, .mp4, .wmv, and .xwm. Other formats may also work but have not been explicitly tested.
 
 ### Step 2: Run the conversion script
 
