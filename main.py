@@ -9,6 +9,7 @@ input_folder = os.path.join(current_directory, 'input')
 output_folder = os.path.join(current_directory, 'output')
 
 sample_rate = 44100
+limit_length = False  # Default: don't limit length
 
 # Create output folder if it doesn't exist
 if not os.path.exists(output_folder):
@@ -28,14 +29,16 @@ for file_name in os.listdir(input_folder):
         # Decrease/Increase the volume, in dB. Negative values decrease the volume, positive values increase it.
         decreased_volume_audio = mono_audio.apply_gain(0.0)
 
-        # Check if the audio is longer than 20 minutes
-        if len(decreased_volume_audio) > 20 * 60 * 1000:
-            # Cut the audio to 10 minutes
-            decreased_volume_audio = decreased_volume_audio[:20 * 60 * 1000]
+        # Check if the length needs to be limited
+        if limit_length:
+            # Check if the audio is longer than 20 minutes
+            if len(decreased_volume_audio) > 20 * 60 * 1000:
+                # Cut the audio to 20 minutes
+                decreased_volume_audio = decreased_volume_audio[:20 * 60 * 1000]
 
-            # Create a fade out effect for the last 30 seconds
-            fade_duration = 5 * 1000  # 5 seconds, adjusted to your needs
-            decreased_volume_audio = decreased_volume_audio.fade_out(fade_duration)
+                # Create a fade out effect for the last 5 seconds (adjustable)
+                fade_duration = 5 * 1000  # 5 seconds fade out
+                decreased_volume_audio = decreased_volume_audio.fade_out(fade_duration)
 
         # Calculate length in ticks
         audio_length_seconds = len(decreased_volume_audio) / 1000  # Convert milliseconds to seconds
