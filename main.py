@@ -16,7 +16,7 @@ if not os.path.exists(output_folder):
 
 # Iterate through all the files in the input folder
 for file_name in os.listdir(input_folder):
-    if file_name.endswith(('.mp3', '.wav', '.flac', '.ogg', '.m4a')):
+    if file_name.endswith(('.mp3', '.wav', '.flac', '.ogg', '.m4a', ".mp4", ".wmv", ".xwm")):
         file_path = os.path.join(input_folder, file_name)
         output_file_name = os.path.splitext(file_name)[0] + '.ogg'
         output_file_path = os.path.join(output_folder, output_file_name)
@@ -28,10 +28,10 @@ for file_name in os.listdir(input_folder):
         # Decrease/Increase the volume, in dB. Negative values decrease the volume, positive values increase it.
         decreased_volume_audio = mono_audio.apply_gain(0.0)
 
-        # Check if the audio is longer than 10 minutes
-        if len(decreased_volume_audio) > 10 * 60 * 1000:
+        # Check if the audio is longer than 20 minutes
+        if len(decreased_volume_audio) > 20 * 60 * 1000:
             # Cut the audio to 10 minutes
-            decreased_volume_audio = decreased_volume_audio[:10 * 60 * 1000]
+            decreased_volume_audio = decreased_volume_audio[:20 * 60 * 1000]
 
             # Create a fade out effect for the last 30 seconds
             fade_duration = 5 * 1000  # 5 seconds, adjusted to your needs
