@@ -1,8 +1,8 @@
-# Minecraft Mod Audio Conversion Tool
+# MineTrack
 
 ## 1. Introduction
 
-The **Minecraft Mod Audio Conversion Tool** is a specialized Python-based application designed to simplify the process of converting various audio file formats to `.ogg` with single audio channels (mono) for use in **Minecraft Mods**. This tool eliminates the need for complex operations in software like Audacity, providing a quick and efficient way to standardize audio files for Minecraft modding.
+The **MineTrack** is a specialized Python-based application designed to simplify the process of converting various audio file formats to `.ogg` with single audio channels (mono) for use in **Minecraft Mods**. This tool eliminates the need for complex operations in software like Audacity, providing a quick and efficient way to standardize audio files for Minecraft modding.
 
 ## 2. Why this tool is necessary
 
